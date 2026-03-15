@@ -1,0 +1,796 @@
+{
+  "guidelines": [
+    {
+      "id": "FPC-001",
+      "title": "Fair Practices Code - Loan Application & Processing",
+      "source": "RBI Master Circular on Fair Practices Code for Lenders",
+      "circular_ref": "RBI/2015-16/16 DNBR (PD) CC.No.054/03.10.119/2015-16",
+      "year": 2015,
+      "content": "All lenders must provide a written loan agreement including all terms and conditions including annualised rate of interest with EMI breakup. The loan agreement must clearly state all fees and charges upfront.",
+      "keywords": [
+        "loan agreement",
+        "annualised rate",
+        "EMI",
+        "fees",
+        "charges",
+        "transparency"
+      ]
+    },
+    {
+      "id": "DLG-001",
+      "title": "Digital Lending Guidelines 2022 - Transparency",
+      "source": "RBI Guidelines on Digital Lending",
+      "circular_ref": "RBI/2022-23/111 DOR.CRE.REC.66/21.07.001/2022-23",
+      "year": 2022,
+      "content": "Digital lenders must provide a Key Fact Statement (KFS) before loan disbursement including APR, processing fee, penal charges, and cooling off period of 3 days. No automatic increase of credit limit without explicit consent.",
+      "keywords": [
+        "KFS",
+        "APR",
+        "cooling off",
+        "digital lending",
+        "consent",
+        "credit limit"
+      ]
+    },
+    {
+      "id": "DLG-002",
+      "title": "Digital Lending - Prohibited Charges",
+      "source": "RBI Guidelines on Digital Lending 2022",
+      "circular_ref": "RBI/2022-23/111",
+      "year": 2022,
+      "content": "Lenders are prohibited from charging fees not mentioned in the loan agreement or KFS. Pass-through charges must be disclosed. No hidden service charges or upfront deductions without borrower knowledge.",
+      "keywords": [
+        "hidden charges",
+        "pass-through",
+        "prohibited fees",
+        "KFS disclosure"
+      ]
+    },
+    {
+      "id": "PCR-001",
+      "title": "Penal Charges Regulation 2023",
+      "source": "RBI Circular on Penal Charges in Loan Accounts",
+      "circular_ref": "RBI/2023-24/53 DoR.MCS.REC.28/01.01.001/2023-24",
+      "year": 2023,
+      "content": "Penal charges shall not be levied in the form of penal interest added to the principal outstanding. Penal charges must be reasonable and not discriminatory. Lenders must not compound penal charges. The penal charge must be disclosed in the KFS and loan agreement.",
+      "keywords": [
+        "penal charges",
+        "penal interest",
+        "compounding",
+        "discriminatory",
+        "KFS"
+      ]
+    },
+    {
+      "id": "PCR-002",
+      "title": "Penal Charges - Compounding Prohibition",
+      "source": "RBI Circular 2023-24/53",
+      "circular_ref": "RBI/2023-24/53",
+      "year": 2023,
+      "content": "No further interest shall be levied on penal charges. Penal charges cannot be capitalised into principal. This applies to all regulated entities including banks, NBFCs, and digital lenders.",
+      "keywords": [
+        "compounding",
+        "capitalization",
+        "penal interest",
+        "NBFC",
+        "banks"
+      ]
+    },
+    {
+      "id": "FPC-002",
+      "title": "Recovery Agent Guidelines",
+      "source": "RBI Guidelines on Recovery Agents",
+      "circular_ref": "RBI/2008-09/135 DBOD.No.Leg.BC.28/09.07.005/2008-09",
+      "year": 2008,
+      "content": "Recovery agents must not resort to intimidation or harassment. Calls should only be made between 7AM-7PM. Agents must not make false or misleading representations. Borrowers must be treated with dignity.",
+      "keywords": [
+        "recovery agent",
+        "harassment",
+        "intimidation",
+        "dignity",
+        "calls"
+      ]
+    },
+    {
+      "id": "OMB-001",
+      "title": "RBI Integrated Ombudsman Scheme 2021",
+      "source": "RBI Integrated Ombudsman Scheme",
+      "circular_ref": "RBI/2021-22/117",
+      "year": 2021,
+      "content": "Borrowers can file complaints with RBI Integrated Ombudsman if bank/NBFC does not resolve within 30 days. Ombudsman can award compensation up to Rs 20 lakh for deficiency in service. Complaints can be filed at https://cms.rbi.org.in",
+      "keywords": [
+        "ombudsman",
+        "complaint",
+        "compensation",
+        "30 days",
+        "deficiency"
+      ]
+    },
+    {
+      "id": "INT-001",
+      "title": "Interest Rate Transparency",
+      "source": "RBI Circular on Interest Rate Policy",
+      "circular_ref": "RBI/2010-11/232",
+      "year": 2010,
+      "content": "All interest rates must be disclosed as annualised rates. Floating rate changes must be communicated 3 months in advance. Any change in spread over benchmark rate requires borrower notification. Banks cannot charge interest at rates higher than sanctioned rate.",
+      "keywords": [
+        "interest rate",
+        "annualised",
+        "floating rate",
+        "spread",
+        "benchmark",
+        "notification"
+      ]
+    },
+    {
+      "id": "GST-001",
+      "title": "GST on Financial Services",
+      "source": "GST Council Notification",
+      "circular_ref": "Notification 12/2017 Central Tax Rate",
+      "year": 2017,
+      "content": "GST at 18% is applicable on processing fees, documentation charges, and other fee-based services. GST is NOT applicable on interest component. Lenders misapplying GST on interest portion violate GST regulations.",
+      "keywords": [
+        "GST",
+        "18%",
+        "processing fee",
+        "interest",
+        "misapplication"
+      ]
+    },
+    {
+      "id": "KFS-001",
+      "title": "Key Fact Statement Mandate",
+      "source": "RBI Master Direction on KFS",
+      "circular_ref": "RBI/2024-25/45 DoR.MCS.REC.22/01.01.001/2024-25",
+      "year": 2024,
+      "content": "KFS is mandatory for all retail and MSME loans. KFS must include: APR, EMI schedule, all charges, cooling-off period (3 days for digital loans), prepayment terms, and grievance redressal mechanism. Lender must provide KFS before loan sanction.",
+      "keywords": [
+        "KFS",
+        "mandatory",
+        "retail",
+        "MSME",
+        "APR",
+        "cooling off",
+        "prepayment",
+        "grievance"
+      ]
+    },
+    {
+      "id": "PRE-001",
+      "title": "Prepayment Charges on Floating Rate Loans - Directions 2025",
+      "source": "RBI (Pre-payment Charges on Loans) Directions, 2025",
+      "circular_ref": "RBI/2025-26/xxx DoR.MCS.REC./01.01.001/2025-26 (July 2, 2025)",
+      "year": 2025,
+      "content": "Regulated entities (banks, NBFCs including HFCs) shall not levy any prepayment charges or foreclosure penalties on floating rate term loans sanctioned to individual borrowers for non-business purposes. From January 1, 2026, this prohibition also extends to floating rate business loans to individual borrowers and Micro & Small Enterprises (MSEs) for loans sanctioned or renewed on/after that date. The prohibition applies irrespective of the source of funds used for prepayment and without any minimum lock-in period.",
+      "keywords": [
+        "prepayment",
+        "foreclosure",
+        "floating rate",
+        "individual borrower",
+        "MSE",
+        "penalty",
+        "prohibition",
+        "2025",
+        "2026"
+      ]
+    },
+    {
+      "id": "PRE-002",
+      "title": "Prepayment Charges - Fixed Rate Loans Disclosure",
+      "source": "RBI (Pre-payment Charges on Loans) Directions, 2025",
+      "circular_ref": "RBI/2025-26/xxx DoR.MCS.REC./01.01.001/2025-26 (July 2, 2025)",
+      "year": 2025,
+      "content": "For fixed interest rate loans, lenders may levy prepayment or foreclosure charges if clearly disclosed upfront in the sanction letter and loan agreement, along with the calculation methodology. Hidden or arbitrary prepayment penalties are prohibited. For Current Account/Overdraft (CC/OD) facilities, prepayment charges (if any) are capped at the sanctioned limit amount on closure before the due date.",
+      "keywords": [
+        "prepayment",
+        "fixed rate",
+        "foreclosure charges",
+        "sanction letter",
+        "disclosure",
+        "CC/OD"
+      ]
+    },
+    {
+      "id": "KYC-001",
+      "title": "KYC Master Direction - Customer Due Diligence",
+      "source": "RBI Master Direction on Know Your Customer (KYC)",
+      "circular_ref": "RBI/2015-16/426 DBR.AML.BC.No.81/14.01.001/2015-16 (amended 2023)",
+      "year": 2023,
+      "content": "All regulated entities (banks, NBFCs, digital lenders) must conduct Customer Due Diligence (CDD) before establishing an account-based relationship. KYC records must be uploaded to the Central KYC Registry (CKYCR) within 10 days of onboarding. For entities, GST number verification is mandatory (Know Your Business - KYB). Beneficial ownership threshold for companies and trusts is 10% shareholding or control. RBI recognises Aadhaar, PAN, Passport, Voter ID, and Udyam Registration Certificate as valid OVDs.",
+      "keywords": [
+        "KYC",
+        "CDD",
+        "CKYCR",
+        "beneficial ownership",
+        "Aadhaar",
+        "PAN",
+        "Udyam",
+        "onboarding",
+        "AML"
+      ]
+    },
+    {
+      "id": "KYC-002",
+      "title": "Video-Based Customer Identification Process (V-CIP)",
+      "source": "RBI Master Direction on KYC - V-CIP provisions",
+      "circular_ref": "RBI/2019-20/170 DBR.AML.BC.No.81/14.01.001/2015-16 (V-CIP amendment 2020)",
+      "year": 2020,
+      "content": "Regulated entities are permitted to use Video-Based Customer Identification Process (V-CIP) as a consent-based alternate to physical KYC for individual customers. The V-CIP session must be live, encrypted, and stored securely. Face matching against Aadhaar/PAN is mandatory. V-CIP is not permissible for high-risk customers or politically exposed persons (PEPs) without enhanced due diligence. All V-CIP records must be auditable.",
+      "keywords": [
+        "V-CIP",
+        "video KYC",
+        "digital onboarding",
+        "Aadhaar",
+        "face matching",
+        "PEP",
+        "encryption",
+        "consent"
+      ]
+    },
+    {
+      "id": "KYC-003",
+      "title": "Periodic KYC Updation",
+      "source": "RBI Master Direction on KYC - Periodic Updation",
+      "circular_ref": "RBI/2015-16/426 DBR.AML.BC.No.81/14.01.001/2015-16",
+      "year": 2023,
+      "content": "Regulated entities must periodically update KYC records: high-risk customers every 2 years, medium-risk customers every 8 years, and low-risk customers every 10 years. Accounts should not be frozen solely for non-submission of KYC documents if the customer provides a self-declaration that details remain unchanged. Entities cannot deny banking services based solely on pending periodic KYC updation if the customer cooperates.",
+      "keywords": [
+        "KYC updation",
+        "periodic",
+        "high risk",
+        "medium risk",
+        "low risk",
+        "account freeze",
+        "self-declaration"
+      ]
+    },
+    {
+      "id": "OMB-002",
+      "title": "Internal Ombudsman Directions for NBFCs 2026",
+      "source": "RBI Directions on Internal Ombudsman for NBFCs",
+      "circular_ref": "RBI/2025-26/xxx DOR.NBFC.REC./01.01.001/2025-26 (January 14, 2026)",
+      "year": 2026,
+      "content": "Every eligible NBFC must appoint at least one independent Internal Ombudsman (IO) to review customer complaints that have been partially resolved or wholly rejected by the entity's internal grievance mechanism. Complaints must be auto-escalated to the IO without requiring borrower action. IO decisions can only be overridden by senior management with board-level oversight. The IO's office does not handle complaints received directly from the public. NBFCs must inform complainants about the option to approach the RBI Ombudsman where the IO does not resolve in their favour.",
+      "keywords": [
+        "internal ombudsman",
+        "NBFC",
+        "IO",
+        "auto-escalation",
+        "grievance",
+        "board oversight",
+        "complaint resolution"
+      ]
+    },
+    {
+      "id": "OMB-003",
+      "title": "RBI Ombudsman - Complaint Filing Process",
+      "source": "RBI Integrated Ombudsman Scheme 2021 - Operational Guidelines",
+      "circular_ref": "RBI/2021-22/117",
+      "year": 2021,
+      "content": "A borrower must first file a complaint with the lender's internal grievance cell. If not resolved within 30 days or the borrower is unsatisfied, they may escalate to the RBI Integrated Ombudsman via https://cms.rbi.org.in or by calling 14448. The scheme covers complaints related to deficiency in services including unfair charges, non-disclosure of charges, recovery harassment, and mis-selling. The complaint must be filed within one year of receiving the final reply from the lender.",
+      "keywords": [
+        "ombudsman",
+        "14448",
+        "cms.rbi.org.in",
+        "escalation",
+        "30 days",
+        "mis-selling",
+        "unfair charges",
+        "one year"
+      ]
+    },
+    {
+      "id": "CIC-001",
+      "title": "Fortnightly Credit Information Reporting",
+      "source": "RBI Guidelines on Credit Information Reporting",
+      "circular_ref": "RBI/2023-24/73 DoR.FIN.REC.44/20.16.003/2023-24 (October 26, 2023)",
+      "year": 2024,
+      "content": "Effective January 1, 2025, all regulated entities (banks, NBFCs) are required to submit credit information to Credit Information Companies (CICs) on a fortnightly basis — specifically on the 15th and last day of each month. This ensures borrowers' credit data is updated and accurately reflects current repayment behaviour. Delayed or inaccurate reporting is a regulatory violation.",
+      "keywords": [
+        "credit reporting",
+        "fortnightly",
+        "CIC",
+        "CIBIL",
+        "credit bureau",
+        "15 days",
+        "January 2025"
+      ]
+    },
+    {
+      "id": "CIC-002",
+      "title": "Borrower Notification on Credit Enquiry",
+      "source": "RBI Circular on Credit Information Companies Framework 2023",
+      "circular_ref": "RBI/2023-24/73 DoR.FIN.REC.44/20.16.003/2023-24",
+      "year": 2023,
+      "content": "Credit Information Companies (CICs) must send real-time notifications via SMS or email to borrowers whenever a lender (bank or NBFC) accesses their credit report. Before reporting a default to a CIC, lenders must provide prior intimation/warning to the borrower, giving them an opportunity to rectify the situation. Free credit report access: borrowers are entitled to one free full credit report per year from each CIC.",
+      "keywords": [
+        "credit enquiry",
+        "notification",
+        "SMS",
+        "email",
+        "CIBIL",
+        "default reporting",
+        "prior intimation",
+        "free credit report"
+      ]
+    },
+    {
+      "id": "CIC-003",
+      "title": "Credit Bureau Dispute Resolution Timeline",
+      "source": "RBI Framework for Compensation - Delayed Credit Information Update",
+      "circular_ref": "RBI/2023-24/72 DoR.FIN.REC.43/20.16.003/2023-24 (October 26, 2023)",
+      "year": 2023,
+      "content": "Any grievance raised by a borrower regarding their credit report must be treated as a formal complaint (not a request or inquiry) by both lenders and Credit Information Companies. CICs must resolve credit report disputes within 30 days. If the dispute is not resolved within 30 days, the CIC must pay a compensation of Rs 100 per calendar day of delay to the complainant. Lenders are required to investigate and respond to CIC disputes within 21 days.",
+      "keywords": [
+        "credit dispute",
+        "CIC",
+        "CIBIL",
+        "30 days",
+        "compensation",
+        "Rs 100",
+        "grievance",
+        "credit report correction"
+      ]
+    },
+    {
+      "id": "CIC-004",
+      "title": "Loan Rejection Reason Mandate for Credit Bureaus",
+      "source": "RBI Guidelines on Credit Information Companies 2023",
+      "circular_ref": "RBI/2023-24/73 DoR.FIN.REC.44/20.16.003/2023-24",
+      "year": 2023,
+      "content": "When a lender rejects a loan application based on credit report data, they must communicate the specific reason(s) for rejection to the applicant along with the name of the CIC whose report was used. This enables borrowers to identify and rectify errors in their credit profiles. Lenders cannot cite vague reasons like 'credit score insufficient' without specifying the underlying factor.",
+      "keywords": [
+        "loan rejection",
+        "credit score reason",
+        "CIC",
+        "CIBIL",
+        "transparency",
+        "rejection reason",
+        "applicant rights"
+      ]
+    },
+    {
+      "id": "MFI-001",
+      "title": "Microfinance Loans - Household Income Definition",
+      "source": "RBI Master Direction for NBFC-MFI (Microfinance)",
+      "circular_ref": "RBI/DOR/2021-22/89 DOR.FIN.REC.42/03.10.038/2021-22 (March 14, 2022)",
+      "year": 2022,
+      "content": "Microfinance loans are defined as collateral-free loans to households with annual household income up to Rs 3,00,000. A household is defined as husband, wife, and unmarried children. NBFC-MFIs must maintain at least 75% of their total assets as microfinance loans. MFIs must assess and document household income before loan sanction and report it to Credit Information Companies to prevent over-indebtedness.",
+      "keywords": [
+        "microfinance",
+        "NBFC-MFI",
+        "household income",
+        "Rs 3 lakh",
+        "collateral-free",
+        "75%",
+        "MFI qualification"
+      ]
+    },
+    {
+      "id": "MFI-002",
+      "title": "Microfinance - Monthly Repayment Cap",
+      "source": "RBI Master Direction for NBFC-MFI 2022",
+      "circular_ref": "RBI/DOR/2021-22/89 DOR.FIN.REC.42/03.10.038/2021-22",
+      "year": 2022,
+      "content": "Total monthly loan repayment obligations of a microfinance household must not exceed 50% of the monthly household income. This cap applies across all lenders combined, not per loan. MFIs must check existing loan obligations via Credit Information Companies before disbursement. Lenders who knowingly disburse loans causing the borrower to exceed the 50% cap are in violation of these directions.",
+      "keywords": [
+        "microfinance",
+        "repayment cap",
+        "50%",
+        "household income",
+        "over-indebtedness",
+        "CIC check",
+        "monthly EMI"
+      ]
+    },
+    {
+      "id": "MFI-003",
+      "title": "Microfinance - Pricing and Interest Rate Cap",
+      "source": "RBI Master Direction for NBFC-MFI 2022",
+      "circular_ref": "RBI/DOR/2021-22/89 DOR.FIN.REC.42/03.10.038/2021-22",
+      "year": 2022,
+      "content": "NBFC-MFIs must adopt a board-approved interest rate policy for microfinance loans. The interest rate and processing fees must be disclosed in loan cards/passbooks provided to borrowers. Lenders cannot charge prepayment penalties on microfinance loans. A loan card must be issued to each borrower showing: interest rate, all charges, loan amount, repayment schedule, and name of MFI. All charges must be in vernacular language understood by the borrower.",
+      "keywords": [
+        "microfinance interest rate",
+        "loan card",
+        "vernacular",
+        "no prepayment penalty",
+        "processing fees",
+        "board-approved policy"
+      ]
+    },
+    {
+      "id": "CLM-001",
+      "title": "Co-Lending Model - Banks and NBFCs",
+      "source": "RBI Guidelines on Co-Lending by Banks and NBFCs to Priority Sector",
+      "circular_ref": "RBI/2020-21/63 DOR.NBFC (PD) CC.No.111/22.10.038/2020-21 (November 5, 2020)",
+      "year": 2020,
+      "content": "Banks and NBFCs may co-lend to priority sector borrowers under a Master Agreement. The bank must take a minimum 80% share of the co-originated loan on its books. The NBFC retains a minimum 20% share. Risk and reward must be shared proportionately. The borrower must have a single loan account with the bank, and the bank is responsible for regulatory compliance. The interest rate charged to the borrower cannot exceed the NBFC's board-approved interest rate.",
+      "keywords": [
+        "co-lending",
+        "bank NBFC",
+        "priority sector",
+        "80:20",
+        "Master Agreement",
+        "single loan account",
+        "risk sharing"
+      ]
+    },
+    {
+      "id": "DLG-003",
+      "title": "Default Loss Guarantee (FLDG) in Digital Lending",
+      "source": "RBI Guidelines on Default Loss Guarantee (DLG) in Digital Lending",
+      "circular_ref": "RBI/2023-24/41 DOR.FIN.REC.20/03.10.038/2023-24 (June 8, 2023)",
+      "year": 2023,
+      "content": "RBI permits Default Loss Guarantee (DLG/FLDG) arrangements between Regulated Entities (banks, NBFCs) and Lending Service Providers (LSPs/FinTechs). The maximum DLG cap is 5% of the loan portfolio covered. DLG arrangements must be backed by cash deposits, fixed deposits, or bank guarantees. The RE remains responsible for credit appraisal and compliance; risk cannot be fully transferred to the LSP. DLG agreements must be disclosed in the RE's financial statements.",
+      "keywords": [
+        "DLG",
+        "FLDG",
+        "default loss guarantee",
+        "lending service provider",
+        "fintech",
+        "5% cap",
+        "digital lending",
+        "credit risk"
+      ]
+    },
+    {
+      "id": "DLG-004",
+      "title": "Lending Service Provider (LSP) Obligations in Digital Lending",
+      "source": "RBI Guidelines on Digital Lending 2022",
+      "circular_ref": "RBI/2022-23/111 DOR.CRE.REC.66/21.07.001/2022-23",
+      "year": 2022,
+      "content": "Lending Service Providers (LSPs) acting as agents of banks/NBFCs must not disburse or collect loan funds directly. All disbursements must flow from the regulated entity's account to the borrower's bank account only — no pass-through via LSP accounts. LSPs must store borrower data only in India. LSPs cannot access mobile phone resources like contacts, camera, or microphone beyond what is required for KYC. Loan apps must display a prominent RBI-registered lender's name.",
+      "keywords": [
+        "LSP",
+        "lending service provider",
+        "disbursement",
+        "data localisation",
+        "app permissions",
+        "India",
+        "digital lending"
+      ]
+    },
+    {
+      "id": "NPA-001",
+      "title": "NPA Classification - 90 Days Overdue Rule",
+      "source": "RBI Master Circular on Income Recognition, Asset Classification and Provisioning",
+      "circular_ref": "RBI/2024-25/13 DOR.STR.REC.7/21.04.048/2024-25",
+      "year": 2024,
+      "content": "A loan account becomes a Non-Performing Asset (NPA) if interest or principal instalment remains overdue for more than 90 days for a term loan, or if the account remains 'out of order' for 90+ days for an overdraft/cash credit facility. Once classified as NPA, lenders must stop accruing income on a daily basis. Sub-standard assets are NPAs for up to 12 months; doubtful assets are NPAs beyond 12 months; loss assets are irrecoverable amounts.",
+      "keywords": [
+        "NPA",
+        "non-performing asset",
+        "90 days",
+        "overdue",
+        "substandard",
+        "doubtful",
+        "loss asset",
+        "income recognition"
+      ]
+    },
+    {
+      "id": "NPA-002",
+      "title": "Loan Restructuring - Resolution Framework",
+      "source": "RBI Prudential Framework for Resolution of Stressed Assets",
+      "circular_ref": "RBI/2023-24/26 DOR.STR.REC.14/21.04.048/2023-24",
+      "year": 2023,
+      "content": "Lenders may restructure stressed loans under a Board-approved policy. A restructured account that was Standard at the time of restructuring retains its Standard classification only if restructuring terms are met and no further restructuring is needed. A second restructuring of the same account mandates downgrading to Sub-Standard. Restructured accounts must be upgraded to Standard after satisfactory performance for a minimum period (typically 1 year from the first payment after restructuring). Borrowers must be informed of restructuring terms in writing.",
+      "keywords": [
+        "loan restructuring",
+        "stressed assets",
+        "NPA upgrade",
+        "standard classification",
+        "second restructuring",
+        "substandard",
+        "resolution"
+      ]
+    },
+    {
+      "id": "INT-002",
+      "title": "External Benchmark Linked Lending Rate (EBLR)",
+      "source": "RBI Circular on External Benchmark Based Lending",
+      "circular_ref": "RBI/2019-20/170 DOR.No.Dir.BC.26/13.03.003/2019-20 (September 4, 2019)",
+      "year": 2019,
+      "content": "All new floating rate retail and MSME loans sanctioned from October 1, 2019 must be linked to an external benchmark: RBI Repo Rate, 3-month T-bill rate, 6-month T-bill rate, or any FBIL-published benchmark. Banks cannot lend below the external benchmark rate. Interest rate resets for EBLR-linked loans must happen at least once every 3 months. Spread over benchmark can only be changed if borrower's credit risk profile changes materially, and such change must be communicated to the borrower.",
+      "keywords": [
+        "EBLR",
+        "external benchmark",
+        "repo rate",
+        "MCLR",
+        "retail loans",
+        "MSME",
+        "floating rate",
+        "spread",
+        "reset",
+        "October 2019"
+      ]
+    },
+    {
+      "id": "INT-003",
+      "title": "MCLR - Marginal Cost of Funds Based Lending Rate",
+      "source": "RBI Circular on MCLR",
+      "circular_ref": "RBI/2015-16/60 DBR.Dir.BC.No.14/13.03.00/2015-16 (April 1, 2016)",
+      "year": 2016,
+      "content": "Banks must compute and publish Marginal Cost of Funds Based Lending Rate (MCLR) for various tenors (overnight, 1 month, 3 months, 6 months, 1 year, etc.) on a monthly basis. Existing floating rate loans linked to base rate or BPLR may continue until repaid or renewed. MCLR must be reviewed at least monthly. No loan shall be sanctioned below the applicable MCLR except specific categories permitted by RBI. MCLR must be prominently displayed on bank websites.",
+      "keywords": [
+        "MCLR",
+        "marginal cost",
+        "lending rate",
+        "base rate",
+        "benchmark",
+        "tenor",
+        "monthly review"
+      ]
+    },
+    {
+      "id": "RBC-001",
+      "title": "NBFC Responsible Business Conduct Directions 2025",
+      "source": "RBI (Non-Banking Financial Companies - Responsible Business Conduct) Directions, 2025",
+      "circular_ref": "RBI/DOR/2025-26/362 (December 2025)",
+      "year": 2025,
+      "content": "RBI issued comprehensive Responsible Business Conduct (RBC) Directions for NBFCs covering: mandatory KFS with APR and repayment schedule before loan sanction, prohibition on undisclosed charges, replacement of penal interest with reasonable non-capitalised penal charges, floating rate borrowers must be given clear reset options without causing negative amortisation, ban on prepayment charges for floating rate individual loans, prescribed timelines for release of property documents post loan closure, and transparent auction processes for collateral. Staff training on customer service is mandatory.",
+      "keywords": [
+        "RBC",
+        "responsible business conduct",
+        "NBFC",
+        "KFS",
+        "penal charges",
+        "collateral auction",
+        "property documents",
+        "negative amortisation",
+        "staff training"
+      ]
+    },
+    {
+      "id": "RBC-002",
+      "title": "Property Document Return After Loan Closure",
+      "source": "RBI Directions on Property Document Release / Responsible Business Conduct",
+      "circular_ref": "RBI/DOR/2025-26/362 and RBI/2023-24/77",
+      "year": 2023,
+      "content": "Lenders must release all original property documents (title deeds, collateral papers) within 30 days of full loan repayment or closure. Any delay beyond 30 days entitles the borrower to compensation of Rs 5,000 per day. Lenders must also release pledged securities within the prescribed timeline. In case of lender's loss of original documents, the lender must assist in obtaining certified copies at their own cost.",
+      "keywords": [
+        "property documents",
+        "title deed",
+        "30 days",
+        "Rs 5000 per day",
+        "loan closure",
+        "collateral release",
+        "compensation",
+        "pledged securities"
+      ]
+    },
+    {
+      "id": "RBC-003",
+      "title": "Loan Account Statement and Repayment Schedule",
+      "source": "RBI Fair Practices Code / Responsible Business Conduct",
+      "circular_ref": "RBI/2015-16/16 DNBR (PD) CC.No.054/03.10.119/2015-16",
+      "year": 2015,
+      "content": "Lenders must provide borrowers with a complete loan repayment schedule at the time of disbursal. Borrowers are entitled to request a loan account statement at any time showing all debits (principal, interest, charges) and credits (repayments). Lenders must provide a No Objection Certificate (NOC) or No-Due Certificate free of cost within 7 working days of full repayment. Failure to provide NOC/NDC is a regulatory violation.",
+      "keywords": [
+        "loan statement",
+        "repayment schedule",
+        "NOC",
+        "no due certificate",
+        "account statement",
+        "7 working days",
+        "free of cost"
+      ]
+    },
+    {
+      "id": "DAT-001",
+      "title": "Data Privacy and Storage - Digital Lending",
+      "source": "RBI Guidelines on Digital Lending 2022 - Data Privacy",
+      "circular_ref": "RBI/2022-23/111 DOR.CRE.REC.66/21.07.001/2022-23",
+      "year": 2022,
+      "content": "All borrower data collected by digital lenders and Lending Service Providers (LSPs) must be stored only in servers located in India (data localisation). Lenders/LSPs cannot access mobile phone resources such as contacts, call logs, camera, microphone, or location data beyond what is strictly required for KYC or transaction verification. Borrowers must give explicit consent before any data is shared with third parties. Lenders must publish a comprehensive privacy policy on their app/website.",
+      "keywords": [
+        "data privacy",
+        "data localisation",
+        "India servers",
+        "phone contacts",
+        "consent",
+        "third party",
+        "privacy policy",
+        "digital lending",
+        "LSP"
+      ]
+    },
+    {
+      "id": "LTV-001",
+      "title": "Loan-to-Value (LTV) Ratio for Gold Loans",
+      "source": "RBI Circular on Loans Against Gold Jewellery",
+      "circular_ref": "RBI/2021-22/49 DOR.CRE.REC.13/21.07.001/2021-22 (August 19, 2021)",
+      "year": 2021,
+      "content": "The Loan-to-Value (LTV) ratio for loans against gold jewellery by NBFCs must not exceed 75% of the value of gold (assessed at current market price). Bullet repayment loans against gold are restricted to a maximum tenure of 12 months. Lenders must have board-approved policies for gold loan assessment, custody, and auction. Gold jewellery must be assessed only by a Chartered Valuer or through a BIS-certified valuer.",
+      "keywords": [
+        "LTV",
+        "gold loan",
+        "75%",
+        "loan to value",
+        "NBFC",
+        "bullet repayment",
+        "jewellery",
+        "valuation"
+      ]
+    },
+    {
+      "id": "LTV-002",
+      "title": "LTV Ratio for Home Loans",
+      "source": "RBI Circular on Housing Finance / LTV",
+      "circular_ref": "RBI/2015-16/36 DNBR(PD).CC.No.003/03.10.119/2015-16",
+      "year": 2015,
+      "content": "For home loans: LTV must not exceed 90% for loans up to Rs 30 lakh, 80% for loans between Rs 30 lakh and Rs 75 lakh, and 75% for loans above Rs 75 lakh. LTV is computed on the project/market value (whichever is lower). Risk weight varies by LTV slab and loan amount. Lenders cannot finance stamp duty, registration charges, or GST from the sanctioned home loan amount.",
+      "keywords": [
+        "LTV",
+        "home loan",
+        "housing finance",
+        "90%",
+        "80%",
+        "75%",
+        "risk weight",
+        "stamp duty"
+      ]
+    },
+    {
+      "id": "PSL-001",
+      "title": "Priority Sector Lending - Targets for Banks",
+      "source": "RBI Master Direction on Priority Sector Lending (PSL)",
+      "circular_ref": "RBI/2020-21/18 FIDD.CO.Plan.BC.5/04.09.01/2020-21 (September 4, 2020)",
+      "year": 2020,
+      "content": "Domestic scheduled commercial banks and foreign banks with 20+ branches must deploy at least 40% of Adjusted Net Bank Credit (ANBC) to priority sector, including: 18% to Agriculture (with 8% to small/marginal farmers), 7.5% to Micro Enterprises, and 10% to weaker sections. Priority sectors include agriculture, MSME, education, housing, social infrastructure, export credit, and renewable energy. Shortfall in PSL targets must be contributed to NABARD/SIDBI/NHB priority funds.",
+      "keywords": [
+        "priority sector",
+        "PSL",
+        "40%",
+        "agriculture",
+        "MSME",
+        "education",
+        "housing",
+        "ANBC",
+        "bank targets",
+        "weaker sections"
+      ]
+    },
+    {
+      "id": "MSME-001",
+      "title": "MSME Loan Restructuring - COVID / General Framework",
+      "source": "RBI Circular on MSME Sector Restructuring",
+      "circular_ref": "RBI/2019-20/170 DBR.No.BP.BC.4/21.04.048/2019-20 (January 1, 2019)",
+      "year": 2019,
+      "content": "MSME accounts with aggregate exposure up to Rs 25 crore can be restructured under a specific framework without downgrading asset classification, subject to conditions. The borrower must not be in default for more than 30 days as on the specified date. A restructuring plan must be implemented within 90 days of the reference date. Post-restructuring, the account remains Standard and is monitored for credit discipline. The lender must obtain an Independent Credit Evaluation (ICE) from a SEBI-registered CRA for exposures above Rs 25 crore.",
+      "keywords": [
+        "MSME",
+        "restructuring",
+        "Rs 25 crore",
+        "30 days",
+        "90 days",
+        "standard asset",
+        "ICE",
+        "credit evaluation"
+      ]
+    },
+    {
+      "id": "WDF-001",
+      "title": "Wilful Defaulter Classification and Reporting",
+      "source": "RBI Master Circular on Wilful Defaulters",
+      "circular_ref": "RBI/2015-16/100 DBR.No.CID.BC.22/20.16.003/2015-16",
+      "year": 2015,
+      "content": "A borrower is classified as a wilful defaulter if: (a) they default despite having capacity to repay, (b) they divert/siphon funds, (c) they dispose of assets without lender consent, or (d) they misrepresent facts. Wilful defaulters are barred from accessing credit from any regulated entity for 5 years. Names must be reported to Credit Information Companies (CICs) and published on the lender's website. Wilful defaulters cannot be directors of any company availing bank finance.",
+      "keywords": [
+        "wilful defaulter",
+        "diversion",
+        "siphoning",
+        "5 years bar",
+        "CIC reporting",
+        "director bar",
+        "misrepresentation"
+      ]
+    },
+    {
+      "id": "SEC-001",
+      "title": "Securitisation of Loan Assets",
+      "source": "RBI Master Direction on Securitisation of Standard Assets",
+      "circular_ref": "RBI/2021-22/81 DOR.STR.REC.53/21.04.177/2021-22 (September 24, 2021)",
+      "year": 2021,
+      "content": "Banks and NBFCs may securitise standard loan assets to raise funds. Minimum Holding Period (MHP) before securitisation: 6 months for loans with original maturity up to 2 years; 12 months for loans with longer maturity. Minimum Retention Requirement (MRR): originator must retain 10% of book value of loans securitised for exposures up to Rs 500 crore. Synthetic securitisation (e.g., FLDG-type) is prohibited. Borrowers must be notified of assignment of their loan.",
+      "keywords": [
+        "securitisation",
+        "standard assets",
+        "MHP",
+        "MRR",
+        "minimum holding period",
+        "10% retention",
+        "synthetic securitisation",
+        "loan assignment"
+      ]
+    },
+    {
+      "id": "OUT-001",
+      "title": "Outsourcing of Financial Services by Banks",
+      "source": "RBI Guidelines on Managing Risks and Code of Conduct in Outsourcing of Financial Services by Banks",
+      "circular_ref": "RBI/2006-07/225 DBOD.No.BP.BC.72/21.04.158/2006-07",
+      "year": 2006,
+      "content": "Banks and NBFCs remain responsible for regulatory compliance even when services are outsourced. Core management functions like risk management, compliance, and internal audit cannot be outsourced. Service providers (including DSAs) must sign confidentiality agreements and comply with data protection requirements. Borrowers must be informed if their loan is being serviced by a third party. Banks must have a board-approved outsourcing policy with due diligence criteria for selecting outsourcing vendors.",
+      "keywords": [
+        "outsourcing",
+        "DSA",
+        "third party",
+        "confidentiality",
+        "data protection",
+        "board policy",
+        "due diligence",
+        "core functions"
+      ]
+    },
+    {
+      "id": "DSC-001",
+      "title": "Mandatory Disclosure on Lender's Website",
+      "source": "RBI Guidelines on Transparency and Disclosure by Banks/NBFCs",
+      "circular_ref": "RBI/2015-16/16 DNBR (PD) CC.No.054/03.10.119/2015-16 and DLG Circular 2022",
+      "year": 2022,
+      "content": "All regulated lenders must publish on their website: (a) list of all approved loan products with charges, (b) interest rate range (minimum to maximum APR), (c) approved Lending Service Providers/DSA names, (d) grievance redressal officer details with email and phone, (e) RBI registration number, (f) privacy policy. Loan apps of digital lenders must display the name of the RE prominently. Lenders must not advertise interest rates lower than the actual applicable rate.",
+      "keywords": [
+        "website disclosure",
+        "APR range",
+        "LSP list",
+        "grievance officer",
+        "RBI registration",
+        "privacy policy",
+        "transparency"
+      ]
+    },
+    {
+      "id": "CPR-001",
+      "title": "Consumer Protection - Mis-selling and Bundled Products",
+      "source": "RBI Guidelines on Consumer Protection and Fair Practices",
+      "circular_ref": "RBI/2014-15/277 DNBS (PD) CC.No.360/03.10.042/2014-15",
+      "year": 2014,
+      "content": "Lenders cannot make insurance or other products mandatory for loan sanction unless specifically permitted. Bundling of credit with insurance must be with explicit written consent of the borrower. The borrower must be free to choose any insurance company. If insurance is bundled, its cost must be reflected in the APR. Cross-selling of products must not be a precondition for loan approval. Mis-selling of financial products is a ground for complaint to the RBI Ombudsman.",
+      "keywords": [
+        "mis-selling",
+        "bundled products",
+        "insurance",
+        "cross-selling",
+        "APR",
+        "explicit consent",
+        "precondition",
+        "consumer protection"
+      ]
+    },
+    {
+      "id": "CPR-002",
+      "title": "Borrower's Right to Know - Loan Agreement Transparency",
+      "source": "RBI Master Circular on Fair Practices Code",
+      "circular_ref": "RBI/2015-16/16 DNBR (PD) CC.No.054/03.10.119/2015-16",
+      "year": 2015,
+      "content": "Borrowers have the right to receive a copy of the loan agreement, KFS, and all related documents at loan sanction. The loan agreement must be in the language understood by the borrower. Lenders cannot alter terms and conditions of the loan unilaterally without prior notice to borrowers. Sanction letters must mention all terms including security/collateral required, applicable interest rate type (fixed/floating), and reset clause. Negative lien/cross-collateralisation clauses must be explicitly flagged.",
+      "keywords": [
+        "loan agreement copy",
+        "vernacular language",
+        "unilateral changes",
+        "sanction letter",
+        "cross-collateralisation",
+        "negative lien",
+        "borrower rights"
+      ]
+    },
+    {
+      "id": "SYS-001",
+      "title": "Large Exposure Framework for Banks",
+      "source": "RBI Large Exposure Framework",
+      "circular_ref": "RBI/2018-19/194 DBR.No.BP.BC.43/21.01.003/2018-19 (June 3, 2019)",
+      "year": 2019,
+      "content": "A single borrower's exposure limit for banks is capped at 20% of the bank's Tier 1 capital (25% in exceptional cases approved by board). A group of connected borrowers has a combined exposure limit of 25% of Tier 1 capital. Banks must monitor group interconnectedness and report large exposures above 10% of Tier 1 capital to RBI. This prevents excessive concentration risk in the loan portfolio.",
+      "keywords": [
+        "large exposure",
+        "20%",
+        "Tier 1 capital",
+        "single borrower",
+        "group exposure",
+        "concentration risk",
+        "connected borrowers"
+      ]
+    }
+  ]
+}
