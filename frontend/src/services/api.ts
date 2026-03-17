@@ -1,6 +1,9 @@
 import axios, { AxiosProgressEvent, AxiosError } from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+// ── Base URL ──────────────────────────────────────────────────────────────────
+// Set VITE_API_BASE_URL in Vercel environment variables to your Render backend URL
+// e.g. https://delta-build-api.onrender.com
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, '') || 'http://localhost:8000';
 
 // ── Helper ────────────────────────────────────────────────────────────────────
 
@@ -16,15 +19,14 @@ function getAuthHeader(): Record<string, string> {
  * Returned by the risk engine inside RiskScore.key_actions.
  */
 export interface KeyAction {
-  action: string;                            // "Contact your bank's GRO within 7 days"
+  action: string;
   urgency: 'IMMEDIATE' | 'SOON' | 'OPTIONAL';
-  why: string;                               // Plain reason: "Your EMI is ₹1,287 above the correct amount"
+  why: string;
 }
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 export interface LoanExtraction {
-  // Core numeric fields
   principal: number;
   interest_rate: number;
   apr: number;
@@ -35,23 +37,17 @@ export interface LoanExtraction {
   penal_interest_rate: number;
   gst_percent: number;
   bounce_charge: number;
-
-  // Clause flags
   foreclosure_clause: string;
   auto_debit_consent: boolean;
   recovery_agent_clause: boolean;
   floating_rate: boolean;
   rate_reset_clause: string;
   bank_discretion_clause: boolean;
-
-  // Loan meta
   loan_type: string;
   lender_name: string;
   borrower_name: string;
   agreement_date: string;
   raw_text_excerpt: string;
-
-  // Fields from backend rewrite
   kfs_present: boolean;
   moratorium_period_months: number;
   prepayment_penalty_percent: number;
@@ -74,21 +70,7 @@ export interface EMIAnalysis {
   emi_flag: boolean;
   apr_mismatch: boolean;
   repayment_mismatch: boolean;
-
-  // ── Plain English fields ──────────────────────────────────────────────────
-  /**
-   * Full plain summary of EMI correctness.
-   * e.g. "Your bank charges ₹1,287 more per month than the correct RBI amount.
-   *        Over 60 months this totals ₹77,220 in overcharges."
-   * Optional — may be absent on older API versions.
-   */
   emi_plain_summary?: string;
-
-  /**
-   * Plain explanation of total overcharge.
-   * e.g. "You have been overcharged ₹15,459 in total across the loan tenure."
-   * Optional — may be absent on older API versions.
-   */
   overcharge_plain?: string;
 }
 
@@ -104,17 +86,10 @@ export interface Violation {
   confidence_score: number;
   circular_ref: string;
   is_deterministic: boolean;
-
-  // ── Plain English fields ──────────────────────────────────────────────────
-  /** Plain one-line title. e.g. "Bank is charging illegal prepayment fee" */
   plain_english?: string;
-  /** What does this violation actually mean? 2–3 sentence explanation. */
   what_this_means?: string;
-  /** Why does this matter financially / legally to the borrower? */
   why_it_matters?: string;
-  /** What specific action the borrower should take for this violation. */
   action_hint?: string;
-  /** "MATH_PROVEN" | "AI_DETECTED" — more explicit than is_deterministic boolean */
   detection_method?: 'MATH_PROVEN' | 'AI_DETECTED';
 }
 
@@ -125,39 +100,13 @@ export interface EscalationLevel {
   subject: string;
   body: string;
   rbi_references: string[];
-
-  // ── Plain English fields ──────────────────────────────────────────────────
-  /**
-   * Plain title for this escalation level.
-   * e.g. "Write to your bank first"  (instead of "Grievance Redressal Officer")
-   * Optional — may be absent on older API versions.
-   */
   level_plain_title?: string;
-
-  /**
-   * When the borrower should use this level.
-   * e.g. "Use this if your bank has not responded within 30 days."
-   * Optional — may be absent on older API versions.
-   */
   when_to_use?: string;
-
-  /**
-   * What outcome the borrower can realistically expect.
-   * e.g. "The RBI Ombudsman can order a full refund plus compensation."
-   * Optional — may be absent on older API versions.
-   */
   expected_outcome?: string;
-
-  /**
-   * How long this level typically takes to resolve.
-   * e.g. "30 days"  /  "3–6 months"
-   * Optional — may be absent on older API versions.
-   */
   time_estimate?: string;
 }
 
 export interface RiskScore {
-  // Numeric scores
   total_score: number;
   emi_deviation_score: number;
   hidden_fee_score: number;
@@ -166,40 +115,11 @@ export interface RiskScore {
   transparency_score: number;
   ambiguity_score: number;
   behavioral_score: number;
-
-  // Categorical output
   risk_category: RiskCategory;
   appeal_success_probability: number;
-
-  // ── Plain English fields ──────────────────────────────────────────────────
-  /**
-   * Plain one-line verdict headline.
-   * e.g. "HIGH RISK — Your agreement has serious problems that will cost you money."
-   * Optional — may be absent on older API versions.
-   */
   risk_category_plain?: string;
-
-  /**
-   * Full 2–3 sentence plain explanation of the risk score.
-   * e.g. "We found 4 violations in your loan agreement. Your bank is charging
-   *        ₹1,287 more per month than the RBI formula allows. You have a strong
-   *        case if you file a complaint."
-   * Optional — may be absent on older API versions.
-   */
   risk_summary_plain?: string;
-
-  /**
-   * Plain explanation of appeal success probability.
-   * e.g. "You have a 90% chance of winning at the RBI Ombudsman because 3 of
-   *        your violations are mathematically proven."
-   * Optional — may be absent on older API versions.
-   */
   appeal_plain?: string;
-
-  /**
-   * Personalised action checklist for the borrower.
-   * Ordered by urgency. Optional — may be absent on older API versions.
-   */
   key_actions?: KeyAction[];
 }
 
@@ -221,18 +141,8 @@ export interface AuditResponse {
   compliance_summary: string;
   confidence_overall: number;
   processing_time_ms: number;
-
-  // Fields from backend rewrite
   low_confidence_warning: string | null;
-
-  /**
-   * FIX: renamed from `document_completeness_score` → `document_completeness`
-   * to match usage in LoanGuard.tsx (`result.document_completeness`).
-   * Backend must send this field as `document_completeness`.
-   * Range: 0.0 – 1.0
-   */
   document_completeness: number;
-
   plain_summary?: string;
   key_actions?: Array<{
     priority: number;
@@ -268,6 +178,16 @@ function handleAxiosError(err: unknown, fallback: string): never {
   if (axios.isAxiosError(err)) {
     const axErr = err as AxiosError<{ detail?: string }>;
     const status = axErr.response?.status ?? 0;
+
+    // Detect Render cold-start timeout specifically
+    if (axErr.code === 'ECONNABORTED' || status === 0) {
+      throw new AuditAPIError({
+        status: 0,
+        message: 'Server is waking up — please retry in a few seconds.',
+        raw: axErr.response?.data,
+      });
+    }
+
     const message =
       axErr.response?.data?.detail ||
       axErr.message ||
@@ -291,6 +211,31 @@ async function handleFetchResponse<T>(response: Response): Promise<T> {
   return response.json() as Promise<T>;
 }
 
+// ── Retry utility (handles Render cold-start) ─────────────────────────────────
+
+async function withRetry<T>(
+  fn: () => Promise<T>,
+  retries = 2,
+  delayMs = 3000
+): Promise<T> {
+  let lastErr: unknown;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+      const isNetworkError =
+        err instanceof AuditAPIError && err.status === 0;
+      if (isNetworkError && attempt < retries) {
+        await new Promise((res) => setTimeout(res, delayMs));
+        continue;
+      }
+      throw err;
+    }
+  }
+  throw lastErr;
+}
+
 // ── API Client ────────────────────────────────────────────────────────────────
 
 export const auditAPI = {
@@ -298,40 +243,48 @@ export const auditAPI = {
     file: File,
     onProgress?: (percent: number) => void
   ): Promise<AuditResponse> => {
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-      const response = await axios.post<AuditResponse>(
-        `${API_BASE_URL}/api/audit/upload`,
-        formData,
-        {
-          headers: { 'Content-Type': 'multipart/form-data', ...getAuthHeader() },
-          onUploadProgress: (e: AxiosProgressEvent) => {
-            if (onProgress && e.total) {
-              onProgress(Math.round((e.loaded / e.total) * 100));
-            }
-          },
-        }
-      );
-      return response.data;
-    } catch (err) {
-      handleAxiosError(err, 'Failed to upload and analyze PDF');
-    }
+    return withRetry(async () => {
+      try {
+        const formData = new FormData();
+        formData.append('file', file);
+        const response = await axios.post<AuditResponse>(
+          `${API_BASE_URL}/api/audit/upload`,
+          formData,
+          {
+            headers: { 'Content-Type': 'multipart/form-data', ...getAuthHeader() },
+            timeout: 120_000, // 2 min — PDF parsing + LLM can be slow on Render free tier
+            onUploadProgress: (e: AxiosProgressEvent) => {
+              if (onProgress && e.total) {
+                onProgress(Math.round((e.loaded / e.total) * 100));
+              }
+            },
+          }
+        );
+        return response.data;
+      } catch (err) {
+        handleAxiosError(err, 'Failed to upload and analyze PDF');
+      }
+    });
   },
 
   auditText: async (text: string): Promise<AuditResponse> => {
-    try {
-      const formData = new FormData();
-      formData.append('raw_text', text);
-      const response = await axios.post<AuditResponse>(
-        `${API_BASE_URL}/api/audit/text`,
-        formData,
-        { headers: { ...getAuthHeader() } }
-      );
-      return response.data;
-    } catch (err) {
-      handleAxiosError(err, 'Failed to analyze text');
-    }
+    return withRetry(async () => {
+      try {
+        const formData = new FormData();
+        formData.append('raw_text', text);
+        const response = await axios.post<AuditResponse>(
+          `${API_BASE_URL}/api/audit/text`,
+          formData,
+          {
+            headers: { ...getAuthHeader() },
+            timeout: 90_000,
+          }
+        );
+        return response.data;
+      } catch (err) {
+        handleAxiosError(err, 'Failed to analyze text');
+      }
+    });
   },
 
   downloadPDF: async (
@@ -365,16 +318,26 @@ export const auditAPI = {
     });
     return handleFetchResponse<{ reply: string }>(response);
   },
+
+  /** Ping the backend health endpoint — useful to wake Render from cold start */
+  ping: async (): Promise<boolean> => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/health`, { method: 'GET' });
+      return response.ok;
+    } catch {
+      return false;
+    }
+  },
 };
 
 // ── Utility Helpers ───────────────────────────────────────────────────────────
 
 export const SUPPORTED_LANGUAGES = {
   en: 'English',
-  hi: '\u0939\u093f\u0902\u0926\u0940',
-  te: '\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41',
-  ta: '\u0ba4\u0bae\u0bbf\u0bb4\u0bcd',
-  ml: '\u0d2e\u0d32\u0d2f\u0d3e\u0d33\u0d02',
+  hi: 'हिंदी',
+  te: 'తెలుగు',
+  ta: 'தமிழ்',
+  ml: 'മലയാളം',
 } as const;
 
 export type LangCode = keyof typeof SUPPORTED_LANGUAGES;
@@ -395,20 +358,20 @@ export async function translateAuditResponse(
 export function severityColor(level: Severity | RiskCategory): string {
   switch (level) {
     case 'CRITICAL': return 'text-red-600';
-    case 'HIGH': return 'text-orange-500';
-    case 'MEDIUM': return 'text-yellow-500';
-    case 'LOW': return 'text-green-500';
-    default: return 'text-gray-400';
+    case 'HIGH':     return 'text-orange-500';
+    case 'MEDIUM':   return 'text-yellow-500';
+    case 'LOW':      return 'text-green-500';
+    default:         return 'text-gray-400';
   }
 }
 
 export function severityBadge(level: Severity | RiskCategory): string {
   switch (level) {
     case 'CRITICAL': return 'bg-red-100 text-red-700 border border-red-300';
-    case 'HIGH': return 'bg-orange-100 text-orange-700 border border-orange-300';
-    case 'MEDIUM': return 'bg-yellow-100 text-yellow-700 border border-yellow-300';
-    case 'LOW': return 'bg-green-100 text-green-700 border border-green-300';
-    default: return 'bg-gray-100 text-gray-600 border border-gray-300';
+    case 'HIGH':     return 'bg-orange-100 text-orange-700 border border-orange-300';
+    case 'MEDIUM':   return 'bg-yellow-100 text-yellow-700 border border-yellow-300';
+    case 'LOW':      return 'bg-green-100 text-green-700 border border-green-300';
+    default:         return 'bg-gray-100 text-gray-600 border border-gray-300';
   }
 }
 
@@ -424,18 +387,18 @@ export function confidenceDisplay(score: number): { label: string; color: string
   const pct = Math.round(score * 100);
   const color =
     pct >= 85 ? 'text-green-600' :
-      pct >= 65 ? 'text-yellow-500' :
-        'text-red-500';
+    pct >= 65 ? 'text-yellow-500' :
+               'text-red-500';
   return { label: `${pct}%`, color };
 }
 
 export function escalationLevelColor(level: number): string {
   switch (level) {
-    case 1: return 'border-green-500 bg-green-50';
-    case 2: return 'border-orange-500 bg-orange-50';
-    case 3: return 'border-blue-600 bg-blue-50';
-    case 4: return 'border-purple-600 bg-purple-50';
-    case 5: return 'border-red-700 bg-red-50';
+    case 1:  return 'border-green-500 bg-green-50';
+    case 2:  return 'border-orange-500 bg-orange-50';
+    case 3:  return 'border-blue-600 bg-blue-50';
+    case 4:  return 'border-purple-600 bg-purple-50';
+    case 5:  return 'border-red-700 bg-red-50';
     default: return 'border-gray-400 bg-gray-50';
   }
 }
